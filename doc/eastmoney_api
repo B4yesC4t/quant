@@ -1,0 +1,40 @@
+# 天天基金数据查询api
+
+- 查询基金历史净值 页面api
+URL：
+    http://fund.eastmoney.com/f10/F10DataApi.aspx?type=lsjz&code=160212&page=104&per=20&sdate=&edate=&rt=0.7823397557719116
+参数：
+    code：基金代码
+    page：页数
+    per：每页条数
+    rt：随机数
+返回：
+原始返回：
+var apidata={ content:"<table class='w782 comm lsjz'><thead><tr><th class='first'>净值日期</th><th>单位净值</th><th>累计净值</th><th>日增长率</th><th>申购状态</th><th>赎回状态</th><th class='tor last'>分红送配</th></tr></thead><tbody><tr><td>2010-03-19</td><td class='tor bold'>0.9980</td><td class='tor bold'>0.9980</td><td class='tor bold red'>0.20%</td><td>封闭期</td><td>封闭期</td><td class='red unbold'></td></tr><tr><td>2010-03-18</td><td class='tor bold'>0.9960</td><td class='tor bold'>0.9960</td><td class='tor bold grn'>-0.30%</td><td>封闭期</td><td>封闭期</td><td class='red unbold'></td></tr><tr><td>2010-03-17</td><td class='tor bold'>0.9990</td><td class='tor bold'>0.9990</td><td class='tor bold red'>0.91%</td><td>封闭期</td><td>封闭期</td><td class='red unbold'></td></tr><tr><td>2010-03-16</td><td class='tor bold'>0.9900</td><td class='tor bold'>0.9900</td><td class='tor bold red'>0.20%</td><td>封闭期</td><td>封闭期</td><td class='red unbold'></td></tr><tr><td>2010-03-15</td><td class='tor bold'>0.9880</td><td class='tor bold'>0.9880</td><td class='tor bold grn'>-0.50%</td><td>封闭期</td><td>封闭期</td><td class='red unbold'></td></tr><tr><td>2010-03-12</td><td class='tor bold'>0.9930</td><td class='tor bold'>0.9930</td><td class='tor bold grn'>-0.30%</td><td>封闭期</td><td>封闭期</td><td class='red unbold'></td></tr><tr><td>2010-03-11</td><td class='tor bold'>0.9960</td><td class='tor bold'>0.9960</td><td class='tor bold grn'>-0.20%</td><td>封闭期</td><td>封闭期</td><td class='red unbold'></td></tr><tr><td>2010-03-05</td><td class='tor bold'>0.9980</td><td class='tor bold'>0.9980</td><td class='tor bold grn'>-0.50%</td><td>封闭期</td><td>封闭期</td><td class='red unbold'></td></tr><tr><td>2010-02-26</td><td class='tor bold'>1.0030</td><td class='tor bold'>1.0030</td><td class='tor bold red'>0.30%</td><td>封闭期</td><td>封闭期</td><td class='red unbold'></td></tr><tr><td>2010-02-12</td><td class='tor bold'>1.0000</td><td class='tor bold'>1.0000</td><td class='tor bold bck'>0.00%</td><td>封闭期</td><td>封闭期</td><td class='red unbold'></td></tr><tr><td>2010-02-10</td><td class='tor bold'>1.0000</td><td class='tor bold'>1.0000</td><td class='tor bold bck'></td><td>封闭期</td><td>封闭期</td><td class='red unbold'></td></tr></tbody></table>",records:2071,pages:104,curpage:104};
+
+var apidata={ content:"
+净值日期	单位净值	累计净值	日增长率	申购状态	赎回状态	分红送配
+2010-03-19	0.9980	0.9980	0.20%	封闭期	封闭期
+2010-03-18	0.9960	0.9960	-0.30%	封闭期	封闭期
+2010-03-17	0.9990	0.9990	0.91%	封闭期	封闭期
+2010-03-16	0.9900	0.9900	0.20%	封闭期	封闭期
+2010-03-15	0.9880	0.9880	-0.50%	封闭期	封闭期
+2010-03-12	0.9930	0.9930	-0.30%	封闭期	封闭期
+2010-03-11	0.9960	0.9960	-0.20%	封闭期	封闭期
+2010-03-05	0.9980	0.9980	-0.50%	封闭期	封闭期
+2010-02-26	1.0030	1.0030	0.30%	封闭期	封闭期
+2010-02-12	1.0000	1.0000	0.00%	封闭期	封闭期
+2010-02-10	1.0000	1.0000		封闭期	封闭期
+",records:2071,pages:104,curpage:104};
+
+
+
+- 查询基金历史净值 ajax-api
+URL：
+    Request URL: http://api.fund.eastmoney.com/f10/lsjz?callback=jQuery18303550588815633511_1535470318820&fundCode=161725&pageIndex=2&pageSize=20&startDate=&endDate=&_=1535470338559
+响应：
+    jQuery18303550588815633511_1535470318820({"Data":{"LSJZList":[{"FSRQ":"2018-07-31","DWJZ":"1.2092","LJJZ":"1.7455","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"0.48","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-30","DWJZ":"1.2034","LJJZ":"1.7397","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"-1.88","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-27","DWJZ":"1.2265","LJJZ":"1.7628","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"1.08","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-26","DWJZ":"1.2134","LJJZ":"1.7497","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"-1.46","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-25","DWJZ":"1.2314","LJJZ":"1.7677","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"-0.56","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-24","DWJZ":"1.2383","LJJZ":"1.7746","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"3.64","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-23","DWJZ":"1.1948","LJJZ":"1.7311","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"-1.79","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-20","DWJZ":"1.2166","LJJZ":"1.7529","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"0.07","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-19","DWJZ":"1.2158","LJJZ":"1.7521","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"-0.70","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-18","DWJZ":"1.2244","LJJZ":"1.7607","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"-1.46","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-17","DWJZ":"1.2425","LJJZ":"1.7788","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"-1.47","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-16","DWJZ":"1.2610","LJJZ":"1.7973","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"0.06","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-13","DWJZ":"1.2603","LJJZ":"1.7966","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"2.76","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-12","DWJZ":"1.2265","LJJZ":"1.7628","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"2.86","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-11","DWJZ":"1.1924","LJJZ":"1.7287","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"-1.24","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-10","DWJZ":"1.2074","LJJZ":"1.7437","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"0.07","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-09","DWJZ":"1.2066","LJJZ":"1.7429","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"3.10","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-06","DWJZ":"1.1703","LJJZ":"1.7066","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"0.45","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-05","DWJZ":"1.1650","LJJZ":"1.7010","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"-0.43","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""},{"FSRQ":"2018-07-04","DWJZ":"1.1700","LJJZ":"1.7060","SDATE":null,"ACTUALSYI":"","NAVTYPE":"1","JZZZL":"-0.85","SGZT":"开放申购","SHZT":"开放赎回","FHFCZ":"","FHFCBZ":"","DTYPE":null,"FHSP":""}],"FundType":"001","SYType":null},"ErrCode":0,"ErrMsg":null,"TotalCount":797,"Expansion":null,"PageSize":20,"PageIndex":2})
+
+
+- 所有基金
+http://fund.eastmoney.com/allfund.html
